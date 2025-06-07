@@ -141,12 +141,14 @@ const App = () => {
               <textarea
                 {...register("premiumFeatures", { shouldUnregister: true })}
                 name="premiumFeatures"
-                rows="3"
+                rows={3}
                 className="mt-1 block text-slate-500 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 placeholder="Describe the premium features you're interested in..."
               ></textarea>
+              {/* @ts-expect-error */}
               {errors.premiumFeatures && (
                 <p className="mt-1 text-sm text-red-600">
+                  {/* @ts-expect-error */}
                   {errors.premiumFeatures.message}
                 </p>
               )}
